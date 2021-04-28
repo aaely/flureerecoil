@@ -1,0 +1,399 @@
+[
+ {
+  "_id": "_collection",
+  "name": "sidebar",
+  "doc": "A collection to hold sidebar customization",
+  "version": "1"
+ },
+ {
+  "_id": "_collection",
+  "name": "employee"
+ },
+ {
+  "_id": "_collection",
+  "name": "purchasereceipt"
+ },
+ {
+  "_id": "_collection",
+  "name": "productprofile"
+ },
+ {
+  "_id": "_collection",
+  "name": "customer"
+ },
+ {
+  "_id": "_collection",
+  "name": "location"
+ },
+ {
+  "_id": "_collection",
+  "name": "cannabinoid"
+ },
+ {
+  "_id": "_collection",
+  "name": "terpene"
+ },
+ {
+  "_id": "_collection",
+  "name": "product"
+ },
+ {
+  "_id": "_collection",
+  "name": "category"
+ },
+ {
+  "_id": "_predicate",
+  "name": "sidebar/imageHashes",
+  "doc": "The users's unique handle",
+  "type": "string",
+  "multi": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "cannabinoid/products",
+  "doc": "effect description",
+  "type": "ref",
+  "multi": true,
+  "restrictCollection": "product"
+ },
+ {
+  "_id": "_predicate",
+  "name": "terpene/products",
+  "type": "ref",
+  "multi": true,
+  "restrictCollection": "product"
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/terpConc",
+  "doc": "terpene concentrations in json",
+  "type": "json",
+  "multi": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/cannConc",
+  "doc": "testing json type",
+  "type": "json",
+  "multi": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/imageHash",
+  "doc": "ref to image hash in IPFS",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/cannabinoidConcentrations",
+  "doc": "terpene concentrations",
+  "type": "float",
+  "multi": true,
+  "upsert": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/cannabinoidIds",
+  "doc": "product attached to this",
+  "type": "ref",
+  "multi": true,
+  "restrictCollection": "cannabinoid"
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/terpeneConcentrations",
+  "doc": "terpene concentrations",
+  "type": "float",
+  "multi": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/terpeneIds",
+  "doc": "terpenes associated with this product",
+  "type": "ref",
+  "multi": true,
+  "restrictCollection": "terpene"
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/productId",
+  "doc": "product attached to this",
+  "type": "ref",
+  "restrictCollection": "product"
+ },
+ {
+  "_id": "_predicate",
+  "name": "productprofile/handle",
+  "doc": "unique identifier",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "cannabinoid/effectDesc",
+  "doc": "effect description",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "cannabinoid/name",
+  "doc": "name of product",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "cannabinoid/handle",
+  "doc": "unique identifier for terpene",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "terpene/effectDesc",
+  "doc": "effect description",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "terpene/scentDesc",
+  "doc": "scent description",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "terpene/name",
+  "doc": "name of product",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "terpene/handle",
+  "doc": "unique identifier for terpene",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/inventory",
+  "doc": "total amount available in grams",
+  "type": "int",
+  "index": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/cost",
+  "doc": "cost in USD",
+  "type": "int",
+  "index": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/name",
+  "doc": "name of product",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/productProfileId",
+  "doc": "ref for profile of this product",
+  "type": "ref",
+  "restrictCollection": "productprofile"
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/handle",
+  "doc": "unique identifier for product",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/phone",
+  "doc": "phone",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/email",
+  "doc": "email",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/license",
+  "doc": "license",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/lastName",
+  "doc": "lastname",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/firstName",
+  "doc": "first name",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/purchases",
+  "doc": "ref to purchases",
+  "type": "ref",
+  "multi": true,
+  "restrictCollection": "purchasereceipt"
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/handle",
+  "doc": "unique identifier",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/handle",
+  "doc": "unique identifier",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/purchaser",
+  "doc": "ref to customer",
+  "type": "ref",
+  "restrictCollection": "customer"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/productIds",
+  "doc": "ref to products purchased",
+  "type": "ref",
+  "multi": true,
+  "restrictCollection": "product"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/quantities",
+  "doc": "quantities of each product purchased",
+  "type": "int",
+  "multi": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/grandTotal",
+  "doc": "final amount paid",
+  "type": "float"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/amountTax",
+  "doc": "tax paid",
+  "type": "float"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/rawTotal",
+  "doc": "amount befor tax",
+  "type": "float"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/locationId",
+  "doc": "location purchased from",
+  "type": "ref",
+  "restrictCollection": "location"
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/handle",
+  "doc": "unique identifier",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/taxRate",
+  "doc": "tax rate as percentage",
+  "type": "float"
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/nickname",
+  "doc": "unique name for location",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/street",
+  "doc": "street address",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/state",
+  "doc": "state",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "purchasereceipt/zip",
+  "doc": "zip",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/state",
+  "doc": "state",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/zip",
+  "doc": "zip code",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "location/city",
+  "doc": "actual city",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "customer/dob",
+  "doc": "date of birth",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "category/handle",
+  "doc": "unique category identifier",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "category/name",
+  "doc": "name of category",
+  "type": "string"
+ },
+ {
+  "_id": "_predicate",
+  "name": "category/description",
+  "doc": "description of items belonging to category",
+  "type": "string",
+  "unique": true
+ },
+ {
+  "_id": "_predicate",
+  "name": "product/category",
+  "doc": "ref to product category",
+  "type": "ref",
+  "restrictCollection": "category"
+ }
+]
